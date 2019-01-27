@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Link } from '../../d3';
+import { Link } from '../../../d3';
 
 @Component({
   selector: '[linkVisual]',
@@ -13,5 +13,6 @@ import { Link } from '../../d3';
   `
 })
 export class LinkVisualComponent  {
+  // tslint:disable-next-line:no-input-rename
   @Input('linkVisual') link: Link;
 }

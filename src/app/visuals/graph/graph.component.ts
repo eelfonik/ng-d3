@@ -2,9 +2,9 @@ import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
 import { D3Service, ForceDirectedGraph, Node, Link } from '../../d3';
 
 @Component({
-  selector: 'graph',
+  selector: 'app-graph-svg',
   template: `
-    <svg #svg [attr.width]="_options.width" [attr.height]="_options.height">
+    <svg [attr.width]="_options.width" [attr.height]="_options.height">
       <g>
         <g [linkVisual]="link" *ngFor="let link of links"></g>
         <g [nodeVisual]="node" *ngFor="let node of nodes"></g>
@@ -12,15 +12,23 @@ import { D3Service, ForceDirectedGraph, Node, Link } from '../../d3';
     </svg>
   `,
   styleUrls: ['./graph.component.css'],
-  providers: [D3Service]
 })
 export class GraphComponent implements OnInit, AfterViewInit {
-  @Input('nodes') nodes: Node[];
-  @Input('links') links: Link[];
+
+  constructor(private d3Service: D3Service) {}
+
+  get options() {
+    return this._options = {
+      width: window.innerWidth,
+      height: window.innerHeight
+    };
+  }
+  @Input() nodes: Node[];
+  @Input() links: Link[];
 
   graph: ForceDirectedGraph;
 
-  constructor(private d3Service: D3Service) { }
+  private _options: { width: number, height: number } = { width: 800, height: 600 };
 
   ngOnInit() {
     /** Receiving an initialized simulated graph from our custom d3 service */
@@ -29,14 +37,5 @@ export class GraphComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.graph.initSimulation(this.options);
-  }
-
-  private _options: { width: number, height: number } = { width: 800, height: 600 };
-
-  get options() {
-    return this._options = {
-      width: window.innerWidth,
-      height: window.innerHeight
-    };
   }
 }

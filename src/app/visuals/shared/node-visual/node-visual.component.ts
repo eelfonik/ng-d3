@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Node } from '../../d3';
+import { Node } from '../../../d3';
 
 @Component({
   selector: '[nodeVisual]',
@@ -8,7 +8,8 @@ import { Node } from '../../d3';
       <svg:circle
           cx="0"
           cy="0"
-          r="50">
+          [attr.fill]="node.color"
+          [attr.r]="node.r">
       </svg:circle>
       <svg:text>
         {{node.id}}
@@ -17,5 +18,6 @@ import { Node } from '../../d3';
   `
 })
 export class NodeVisualComponent {
+  // tslint:disable-next-line:no-input-rename
   @Input('nodeVisual') node: Node;
 }
