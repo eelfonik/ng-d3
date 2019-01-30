@@ -9,6 +9,8 @@ import { Link } from '../../../d3';
         [attr.y1]="link.source.y"
         [attr.x2]="link.target.x"
         [attr.y2]="link.target.y"
+        stroke="rgb(128,186,236)"
+        [attr.stroke-width]="1"
     ></svg:line>
   `
 })

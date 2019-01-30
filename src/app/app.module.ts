@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { D3Service } from './d3';
+import { D3Service, D3_DIRECTIVES } from './d3';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,7 @@ import { SHARED_VISUALS } from './visuals/shared';
     AppComponent,
     GraphComponent,
     ...SHARED_VISUALS,
+    ...D3_DIRECTIVES,
   ],
   imports: [
     BrowserModule,

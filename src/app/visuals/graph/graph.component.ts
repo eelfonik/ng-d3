@@ -7,7 +7,7 @@ import { D3Service, ForceDirectedGraph, Node, Link } from '../../d3';
     <svg [attr.width]="_options.width" [attr.height]="_options.height">
       <g>
         <g [linkVisual]="link" *ngFor="let link of links"></g>
-        <g [nodeVisual]="node" *ngFor="let node of nodes"></g>
+        <g [nodeVisual]="node" *ngFor="let node of nodes" [draggableNode]="node" [draggableInGraph]="graph"></g>
       </g>
     </svg>
   `,

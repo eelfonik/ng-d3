@@ -1,0 +1,4 @@
+{
+  "typescript.suggest.completeFunctionCalls": true,
+  "tslint.configFile": "tslint.json"
+}
