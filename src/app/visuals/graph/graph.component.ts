@@ -1,5 +1,6 @@
+import { D3Service } from './../../d3.service';
 import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
-import { D3Service, ForceDirectedGraph, Node, Link } from '../../d3';
+import { ForceDirectedGraph, Node, Link } from '../../d3';
 
 @Component({
   selector: 'app-graph-svg',
