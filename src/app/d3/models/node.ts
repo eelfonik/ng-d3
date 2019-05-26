@@ -12,6 +12,7 @@ export class Node implements d3.SimulationNodeDatum {
   id: string;
 
   linkCount = 0;
+  color = 'rgb(128,186,236)';
 
   constructor(id) {
     this.id = id;
@@ -23,9 +24,5 @@ export class Node implements d3.SimulationNodeDatum {
 
   get r() {
     return 50 * this.normal() + 10;
-  }
-
-  get color() {
-    return 'rgb(128,186,236)';
   }
 }

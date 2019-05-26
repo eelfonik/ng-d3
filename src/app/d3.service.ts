@@ -66,7 +66,7 @@ export class D3Service {
     d3element.call(d3.drag().on('start', started));
   }
 
-  /** The interactable graph we will simulate in this article
+  /** The interactable graph we will simulate
    * This method does not interact with the document, purely physical calculations with d3
    */
   getForceDirectedGraph(

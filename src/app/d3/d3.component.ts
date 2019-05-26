@@ -1,6 +1,8 @@
+import { VizConsoleService } from './../viz-console.service';
 import { D3Service } from './../d3.service';
 import { Component, OnInit } from '@angular/core';
 import { Node, Link } from './models';
+
 
 @Component({
   selector: 'app-d3',
@@ -14,7 +16,8 @@ export class D3Component implements OnInit {
   nodes: Node[] = [];
   links: Link[] = [];
 
-  constructor() {
+  // need to subscribe to valueChanges observable here (inside some lifecycle ?)
+  constructor(private vizConsoleService: VizConsoleService ) {
     const N = 100;
 
     /** constructing the nodes array */
@@ -35,6 +38,9 @@ export class D3Component implements OnInit {
   }
 
   ngOnInit() {
+    this.vizConsoleService.colorInputChanged.subscribe(val => {
+      this.nodes.forEach(node => node.color = val);
+    });
   }
 
 }

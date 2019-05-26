@@ -6,8 +6,8 @@ import { D3Service } from '../../d3.service';
   selector: '[draggableNode]'
 })
 export class DraggableDirective implements OnInit {
-  @Input('draggableNode') draggableNode: Node;
-  @Input('draggableInGraph') draggableInGraph: ForceDirectedGraph;
+  @Input() draggableNode: Node;
+  @Input() draggableInGraph: ForceDirectedGraph;
 
   constructor(private d3Service: D3Service, private _element: ElementRef) {}
 

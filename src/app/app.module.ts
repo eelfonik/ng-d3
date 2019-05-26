@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { D3Module } from './d3/d3.module';
+import { VisConsoleModule } from './vis-console/vis-console.module';
+
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { D3Module } from './d3/d3.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    D3Module
+    D3Module,
+    VisConsoleModule
   ],
   bootstrap: [AppComponent]
 })
