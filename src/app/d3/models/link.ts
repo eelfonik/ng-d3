@@ -9,6 +9,8 @@ export class Link implements d3.SimulationLinkDatum<Node> {
     source: Node | string | number;
     target: Node | string | number;
 
+    color = 'rgb(128,186,236)';
+
     constructor(source, target) {
         this.source = source;
         this.target = target;

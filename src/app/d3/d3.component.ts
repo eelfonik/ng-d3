@@ -40,6 +40,7 @@ export class D3Component implements OnInit {
   ngOnInit() {
     this.vizConsoleService.colorInputChanged.subscribe(val => {
       this.nodes.forEach(node => node.color = val);
+      this.links.forEach(link => link.color = val);
     });
   }
 

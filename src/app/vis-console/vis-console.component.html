@@ -1,8 +1,9 @@
 <p>
   Favorite Color:
   <select [formControl]="colorControl">
-    <option value="red">red</option>
-    <option value="blue">blue</option>
-    <option value="green">green</option>
+    <option></option>
+    <option *ngFor="let color of colors" [value]="color[0]" [style.color]="color[0]">
+      {{color[1]}}
+    </option>
   </select>
 </p>

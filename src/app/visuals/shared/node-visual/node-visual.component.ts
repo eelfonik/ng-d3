@@ -11,7 +11,9 @@ import { Node } from '../../../d3';
           [attr.fill]="node.color"
           [attr.r]="node.r">
       </svg:circle>
-      <svg:text>
+      <svg:text
+        fill='white'
+      >
         {{node.id}}
       </svg:text>
     </svg:g>

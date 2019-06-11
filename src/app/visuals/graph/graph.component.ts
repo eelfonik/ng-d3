@@ -5,8 +5,8 @@ import { ForceDirectedGraph, Node, Link } from '../../d3';
 @Component({
   selector: 'app-graph-svg',
   template: `
-    <svg [attr.width]="_options.width" [attr.height]="_options.height">
-      <g>
+    <svg #svg [attr.width]="_options.width" [attr.height]="_options.height">
+      <g [zoomableOf]="svg">
         <g [linkVisual]="link" *ngFor="let link of links"></g>
         <g [nodeVisual]="node" *ngFor="let node of nodes" [draggableNode]="node" [draggableInGraph]="graph"></g>
       </g>
@@ -20,7 +20,7 @@ export class GraphComponent implements OnInit, AfterViewInit {
 
   get options() {
     return this._options = {
-      width: window.innerWidth,
+      width: window.innerWidth * 0.8,
       height: window.innerHeight
     };
   }
@@ -37,6 +37,7 @@ export class GraphComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    console.log('???', this.options);
     this.graph.initSimulation(this.options);
   }
 }
