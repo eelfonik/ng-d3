@@ -37,7 +37,6 @@ export class GraphComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log('???', this.options);
     this.graph.initSimulation(this.options);
   }
 }

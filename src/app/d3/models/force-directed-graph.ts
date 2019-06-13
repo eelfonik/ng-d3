@@ -52,7 +52,7 @@ export class ForceDirectedGraph {
 
     /** Creating the simulation */
     if (!this.simulation) {
-      const ticker = this.ticker;
+      // const ticker = this.ticker;
 
       // Creating the force simulation and defining the charges
       this.simulation = d3
@@ -71,9 +71,9 @@ export class ForceDirectedGraph {
         );
 
       // Connecting the d3 ticker to an angular event emitter
-      this.simulation.on('tick', function() {
-        ticker.emit(this);
-      });
+      // this.simulation.on('tick', function() {
+      //   ticker.emit(this);
+      // });
 
       this.initNodes();
       this.initLinks();
@@ -86,6 +86,6 @@ export class ForceDirectedGraph {
     );
 
     /** Restarting the simulation internal timer */
-    this.simulation.restart();
+    // this.simulation.restart();
   }
 }

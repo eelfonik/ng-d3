@@ -4,10 +4,10 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class VizConsoleService {
-  public colorInputChanged: Subject<string> = new Subject<string>();
+  public colorInputChanged$: Subject<string> = new Subject<string>();
 
   emitColorInputChangesVal(val) {
-     this.colorInputChanged.next(val);
+     this.colorInputChanged$.next(val);
   }
   constructor() { }
 }

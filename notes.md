@@ -12,5 +12,8 @@ A detailed explaination of providers can be found [here](https://angular.io/guid
 
 - `bootstrap` (only needed for the root module)
 
-## Mixied view
+## Mixed view
 - if the component in a module can use other module's components, what's the point of defining a module ?
+
+If you could `new` sth (class or function), does it make sense that the **sth** has it's own data already ?
+Even if you pass the initial data in constructor, why ? what's wrong with direct function calls by passing params ? 
