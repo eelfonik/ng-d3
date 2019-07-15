@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Node, Link, ForceDirectedGraph } from './d3/models';
 import * as d3 from 'd3';
 
@@ -7,7 +8,7 @@ export class D3Service {
   /** This service will provide methods to enable user interaction with elements
    * while maintaining the d3 simulations physics
    */
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   /** A method to bind a pan and zoom behaviour to an svg element */
   applyZoomableBehaviour(svgElement, containerElement) {
@@ -71,8 +72,15 @@ export class D3Service {
     links: Link[],
     options: { width; height }
   ) {
-    console.log({ nodes, links });
     const graph = new ForceDirectedGraph(nodes, links, options);
     return graph;
+  }
+
+  getPopulationData() {
+    return this.http.get('assets/population.csv', {responseType: 'text'});
+  }
+
+  parseCSVData(data: string) {
+    return d3.csvParse(data);
   }
 }

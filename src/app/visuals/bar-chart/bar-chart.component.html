@@ -1,0 +1,9 @@
+<svg [attr.width]="900" [attr.height]="400">
+  <rect
+    *ngFor="let data of parseData; index as i"
+    [attr.x]="i * 20"
+    [attr.y]="0"
+    [attr.height]="data['2018']"
+    [attr.width]="10"
+  />
+</svg>

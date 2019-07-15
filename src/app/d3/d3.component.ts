@@ -17,7 +17,7 @@ export class D3Component implements OnInit {
   links: Link[] = [];
 
   // need to subscribe to valueChanges observable here (inside some lifecycle ?)
-  constructor(private vizConsoleService: VizConsoleService ) {
+  constructor(private vizConsoleService: VizConsoleService) {
     const N = 100;
 
     /** constructing the nodes array */
